@@ -1,5 +1,5 @@
 <?php
-    include("header.php");
+    require "header.php";
 
     if($_SESSION["email"] == "" || $_SESSION["password"] == "") {
         header("Location: login.php");

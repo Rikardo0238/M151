@@ -1,5 +1,5 @@
 <?php
-	include("header.php");
+	require "header.php";
 
 	$products = array(
 		array("view/bilder/iphone12promax.png", "iPhone 12 Pro Max", 800),

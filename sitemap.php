@@ -1,5 +1,5 @@
 <?php
-	include("header.php");
+	require "header.php";
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
