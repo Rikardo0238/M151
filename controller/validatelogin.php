@@ -8,7 +8,7 @@
         $email = $_REQUEST["email"];
         $password = hash("ripemd160", $_REQUEST["password"]);
 
-        $servername = "http://myadmin.rikardostoilov.bplaced.net/";
+        $servername = "localhost";
         $dbusername = "rikardostoilov";
         $dbpassword = "1234";
         $dbname = "rikardostoilov";
