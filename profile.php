@@ -3,11 +3,13 @@
 
     if ($_SESSION["email"] == "" || $_SESSION["password"] == "") {
         header("Location: login.php");
+		exit;
     }
 
 	if(isset($_REQUEST["logOut"])) {
-		session_destroy();
+		session_unset();
 		header("Location: login.php");
+		exit;
 	}
 ?>
 

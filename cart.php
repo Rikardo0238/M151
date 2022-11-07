@@ -3,6 +3,7 @@
 
     if($_SESSION["email"] == "" || $_SESSION["password"] == "") {
         header("Location: login.php");
+		exit;
     }
 
 	if(isset($_REQUEST["emptyCart"])) {
@@ -13,6 +14,7 @@
 		if(count($_SESSION["cart"]) > 0) {
 			mail($_SESSION["email"], 'Bestellung - Rikardo.ch', "Vielen Dank dass Sie bei Rikardo.ch bestellt haben. \nIhre Bestellung wurde abgeschickt und wird in kürze bearbeitet. \n\nRikardo.ch");
 			header("Location: /order.php");
+			exit;
 		}
 	}
 ?>

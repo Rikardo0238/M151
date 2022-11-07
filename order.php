@@ -3,11 +3,13 @@
 
     if($_SESSION["email"] == "" || $_SESSION["password"] == "") {
         header("Location: login.php");
+		exit;
     }
 
     if(isset($_REQUEST["emptyCart"])) {
 		$_SESSION["cart"] = array();
         header("Location: /index.php");
+		exit;
 	}
 ?>
 

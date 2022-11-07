@@ -5,8 +5,8 @@
         header("Location: /../login.php");
         exit;
     } else {
-        $email = $_REQUEST["email"];
-        $password = hash("ripemd160", $_REQUEST["password"]);
+        $email = htmlspecialchars($_REQUEST["email"]);
+        $password = hash("ripemd160", htmlspecialchars($_REQUEST["password"]));
 
         $servername = "localhost";
         $dbusername = "rikardostoilov";
