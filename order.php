@@ -33,7 +33,7 @@
 </div>
 
 <div class="container belowtitle text-center">
-    <p>Vielen Dank dass Sie bei Rikardo.ch eingekauft haben. Ihre Bestellung wurde abgeschickt. Sie erhalten in kürze eine E-Mail.</p>
+    <p>Vielen Dank dass Sie bei Rikardo.ch eingekauft haben. Ihre Bestellung wurde abgeschickt. <b>Sie erhalten in kürze eine E-Mail.</p>
 </div>
 
 <div class="container text-center">
@@ -70,7 +70,6 @@
 
     <form method='post'>
 		<input type='submit' name='emptyCart' class='btn btn-dark' value='Zurück zur Startseite'/>
-        <button class='btn btn-dark'>Bestellung Ausdrucken</button>
 	</form>
 </div>
 

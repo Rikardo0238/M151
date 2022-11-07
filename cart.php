@@ -9,8 +9,9 @@
 		$_SESSION["cart"] = array();
 	}
 
-	if(isset($_REQUEST["isCartEmpty"])) {
+	if(isset($_REQUEST["placeOrder"])) {
 		if(count($_SESSION["cart"]) > 0) {
+			mail($_SESSION["email"], 'Bestellung - Rikardo.ch', "Vielen Dank dass Sie bei Rikardo.ch bestellt haben. \nIhre Bestellung wurde abgeschickt und wird in kürze bearbeitet. \n\nRikardo.ch");
 			header("Location: /order.php");
 		}
 	}
@@ -75,7 +76,7 @@
 
 	<form method='post'>
 		<input type='submit' name='emptyCart' class='btn btn-dark' value='Einkaufswagen leeren'/>
-		<input type='submit' name='isCartEmpty' class='btn btn-dark' value='Bestellen'/>
+		<input type='submit' name='placeOrder' class='btn btn-dark' value='Bestellen'/>
 	</form>
 </div>
 

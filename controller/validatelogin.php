@@ -8,10 +8,10 @@
         $email = $_REQUEST["email"];
         $password = hash("ripemd160", $_REQUEST["password"]);
 
-        $servername = "localhost";
-        $dbusername = "root";
-        $dbpassword = "";
-        $dbname = "m151";
+        $servername = "http://myadmin.rikardostoilov.bplaced.net/";
+        $dbusername = "rikardostoilov";
+        $dbpassword = "1234";
+        $dbname = "rikardostoilov";
 
         $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
         if (!$conn) {
