@@ -1,5 +1,5 @@
 <?php
-    require "header.php";
+    include "header.php";
 
 	if (isset($_SESSION["email"]) && isset($_SESSION["password"])) {
         header("Location: profile.php");
