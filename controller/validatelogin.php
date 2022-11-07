@@ -6,12 +6,12 @@
         exit;
     } else {
         $email = $_REQUEST["email"];
-        $password = $_REQUEST["password"];
+        $password = hash("ripemd160", $_REQUEST["password"]);
 
         $servername = "localhost";
         $dbusername = "root";
         $dbpassword = "";
-        $dbname = "m183";
+        $dbname = "m151";
 
         $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
         if (!$conn) {

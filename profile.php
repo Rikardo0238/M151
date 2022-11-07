@@ -4,6 +4,11 @@
     if ($_SESSION["email"] == "" || $_SESSION["password"] == "") {
         header("Location: login.php");
     }
+
+	if(isset($_REQUEST["logOut"])) {
+		session_destroy();
+		header("Location: login.php");
+	}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,6 +39,10 @@
 <div class="container text-center">
     <p><b>E-Mail Adresse:</b> <?php echo $_SESSION["email"]; ?></p>
     <p><b>Passwort:</b> ********</p>
+
+	<form method='post'>
+		<input type='submit' name='logOut' class='btn btn-dark' value='Abmelden'/>
+	</form>
 </div>
 
 <?php

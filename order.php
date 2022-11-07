@@ -5,14 +5,9 @@
         header("Location: login.php");
     }
 
-	if(isset($_REQUEST["emptyCart"])) {
+    if(isset($_REQUEST["emptyCart"])) {
 		$_SESSION["cart"] = array();
-	}
-
-	if(isset($_REQUEST["isCartEmpty"])) {
-		if(count($_SESSION["cart"]) > 0) {
-			header("Location: /order.php");
-		}
+        header("Location: /index.php");
 	}
 ?>
 
@@ -28,17 +23,17 @@
 				<a class="nav-link" href="sitemap.php">Sitemap</a>
 				<a class="nav-link" href="profile.php">Profil</a>
 			</div>
-			<a class='btn btn-light' href='cart.php'>Einkaufswagen</a>
+			<a class='btn btn-light' href='login.php'>Login</a>
 		</div>
 	</div>
 </nav>
 
 <div class="container title text-center">
-    <h3>Einkaufswagen</h3>
+    <h3>Bestellung</h3>
 </div>
 
 <div class="container belowtitle text-center">
-    <p>Sehen sie sich Ihren Einkaufswagen an.</p>
+    <p>Vielen Dank dass Sie bei Rikardo.ch eingekauft haben. Ihre Bestellung wurde abgeschickt. Sie erhalten in kürze eine E-Mail.</p>
 </div>
 
 <div class="container text-center">
@@ -73,9 +68,9 @@
 		</table>
 	</div>
 
-	<form method='post'>
-		<input type='submit' name='emptyCart' class='btn btn-dark' value='Einkaufswagen leeren'/>
-		<input type='submit' name='isCartEmpty' class='btn btn-dark' value='Bestellen'/>
+    <form method='post'>
+		<input type='submit' name='emptyCart' class='btn btn-dark' value='Zurück zur Startseite'/>
+        <button class='btn btn-dark'>Bestellung Ausdrucken</button>
 	</form>
 </div>
 
