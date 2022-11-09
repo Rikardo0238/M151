@@ -41,7 +41,7 @@
 		</div><br>
 		<div class="form-group">
 			<label for="password">Passwort</label>
-			<input type="password" class="form-control" name="password" placeholder="Passwort eingeben" autocomplete="off" required>
+			<input type="password" class="form-control" name="password" placeholder="Passwort eingeben" autocomplete="off" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mindestens eine Nummer, ein Grossbuchstabe, ein Kleinbuchstabe und insgesamt 8 Zeichen.">
 			<small class="form-text text-muted">*Pflichtfeld</small>
 		</div><br>
 		<div class="text-center">
@@ -52,6 +52,14 @@
 
 <div class="text-center">
 	<a href="login.php" class="link-dark">Besitzt schon ein Konto?</a>
+</div>
+
+<div class="text-center">
+	<?php
+		if(isset($_SESSION["accountexists"])) {
+			echo "Ein Konto mit dieser E-Mail existiert bereits, bitte verwenden Sie eine andere.";
+		}
+	?>
 </div>
 
 <?php

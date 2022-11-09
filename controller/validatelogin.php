@@ -28,13 +28,16 @@
 
                     $_SESSION["email"] = $email;
                     $_SESSION["password"] = $password;
+                    $_SESSION["falselogin"] = false;
 
                     header("Location: /../login.php");
                     exit;
                 }
             }
 
-            echo "Das Passwort oder die E-Mail ist falsch.";
+            $_SESSION["falselogin"] = true;
+            header("Location: /../login.php");
+            exit;
         } else {
             echo "Die Datenbank ist leer, sie müssen zuerst ein Konto erstellen.";
         }

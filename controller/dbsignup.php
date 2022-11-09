@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+
+
     if ($_REQUEST["email"] == "" || $_REQUEST["password"] == "") {
         header("Location: /../signup.php");
         exit;
@@ -17,6 +19,24 @@
         if (!$conn) {
             die("Verbindung konnte nicht hergestellet werden, bitte versuchen Sie es später erneut.");
         }
+
+        $sql = "SELECT email FROM benutzer";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                if($row["email"] == $email) {
+                    mysqli_close($conn);
+
+                    $_SESSION["accountexists"] = true;
+
+                    header("Location: /../signup.php");
+                    exit;
+                }
+            }   
+        }
+
+        $_SESSION["accountexists"] = false;
 
         $sql = "INSERT INTO benutzer (email, passwort) VALUES ('$email', '$password')";
 

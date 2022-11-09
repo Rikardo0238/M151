@@ -54,6 +54,14 @@
 	<a href="signup.php" class="link-dark">Noch kein Konto?</a>
 </div>
 
+<div class="text-center">
+	<?php
+		if(isset($_SESSION["falselogin"])) {
+			echo "Das Password oder die E-Mail ist falsch.";
+		}
+	?>
+</div>
+
 <?php
     include("footer.php");
 ?>

@@ -1,5 +1,14 @@
 <?php
 	ob_start();
+	
+	header("Content-Security-Policy-Report-Only: default-src 'none';");
+	header("X-Frame-Options: DENY");
+	header("X-XSS-Protection: 1; mode=block");
+	header('X-Content-Type-Options: nosniff');
+	header('X-Powered-By:');
+	ini_set('session.cookie_httponly', 1);
+	header("Set-Cookie: key=value; path=/; domain=example.org; HttpOnly; SameSite=Lax");
+
 	session_start();
 ?><!DOCTYPE html>
 <html lang="en">
